@@ -50,19 +50,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Backupuser\\.nuget\\packages\\": {}
+    "C:\\Users\\l.marchisio.2268\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Backupuser\\Desktop\\MARCHISIO\\Scada\\TestConnessionePLC\\TestConnessionePLC\\TestConnessionePLC.csproj",
+      "projectUniqueName": "C:\\Users\\l.marchisio.2268\\Desktop\\Scada\\TestConnessionePLC\\TestConnessionePLC\\TestConnessionePLC.csproj",
       "projectName": "TestConnessionePLC",
-      "projectPath": "C:\\Users\\Backupuser\\Desktop\\MARCHISIO\\Scada\\TestConnessionePLC\\TestConnessionePLC\\TestConnessionePLC.csproj",
-      "packagesPath": "C:\\Users\\Backupuser\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Backupuser\\Desktop\\MARCHISIO\\Scada\\TestConnessionePLC\\TestConnessionePLC\\obj\\",
+      "projectPath": "C:\\Users\\l.marchisio.2268\\Desktop\\Scada\\TestConnessionePLC\\TestConnessionePLC\\TestConnessionePLC.csproj",
+      "packagesPath": "C:\\Users\\l.marchisio.2268\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\l.marchisio.2268\\Desktop\\Scada\\TestConnessionePLC\\TestConnessionePLC\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Backupuser\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\l.marchisio.2268\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -70,6 +75,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

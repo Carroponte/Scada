@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TestConnessionePLC;
 
-public class CarroponteState
+public record CarroponteState
 {
     public bool Sale { get; set; }
     public bool Scende { get; set; }
