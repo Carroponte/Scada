@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "b6fF2T4IqYhPPz6zQwVAZKcr8v+oc2EturV68cgl2N0AJzOuaJ+IpdzZpAqqFqKPctZOfbkgrgLjICy4fd/uEg==",
+  "dgSpecHash": "aS6NMXYqAs3Y4mhXg0kHIphWxBPwoKAIr/rB9CjlpUMxlgT77eeq7y4ea4bfQoMsBLR2okOmNPLpY4HuZ2IwJg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\l.marchisio.2268\\Desktop\\Scada\\TestConnessionePLC\\TestConnessionePLC\\TestConnessionePLC.csproj",
+  "projectFilePath": "C:\\Users\\Backupuser\\Desktop\\MARCHISIO\\Scada\\TestConnessionePLC\\TestConnessionePLC\\TestConnessionePLC.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\l.marchisio.2268\\.nuget\\packages\\s7netplus\\0.20.0\\s7netplus.0.20.0.nupkg.sha512"
+    "C:\\Users\\Backupuser\\.nuget\\packages\\s7netplus\\0.20.0\\s7netplus.0.20.0.nupkg.sha512"
   ],
   "logs": []
 }

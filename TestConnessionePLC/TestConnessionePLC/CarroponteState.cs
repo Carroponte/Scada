@@ -21,4 +21,10 @@ public record CarroponteState
     public bool MovimentoX { get; set; }
     public bool MovimentoY { get; set; }
     public bool Movimento { get; set; }
+    public bool Manuale { get; set; }
+    public bool Automatico { get; set; }
+    public bool AvviaAutomatico { get; set; }
+    public bool StopAutomatico { get; set; }
+    public bool ResetAutomatico { get; set; }
+
 }
