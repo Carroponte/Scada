@@ -5,12 +5,16 @@ namespace CarroponteAPI;
 
 public sealed class CarroponteState
 {
-    public bool Sale { get; set; }
-    public bool Scende { get; set; }
+    public bool Manuale { get; set; }
+    public bool Automatico { get; set; }
+    public bool Emergenza { get; set; }
+
     public bool Avanti { get; set; }
     public bool Indietro { get; set; }
-    public bool Sinistra { get; set; }
     public bool Destra { get; set; }
+    public bool Sinistra { get; set; }
+    public bool Sale { get; set; }
+    public bool Scende { get; set; }
     
     public bool FineCorsaX { get; set; }
     
@@ -25,6 +29,9 @@ public sealed class CarroponteState
     public bool MovimentoY { get; set; }
     
     public bool Movimento { get; set; }
+
+    public int Posizione { get; set; }
+    public int Destinazione { get; set; }
 
 
     public override string ToString() => JsonSerializer.Serialize(this);
