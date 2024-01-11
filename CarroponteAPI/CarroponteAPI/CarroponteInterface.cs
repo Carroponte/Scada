@@ -1,37 +1,49 @@
-using S7.Net;
+﻿using S7.Net;
 
 namespace CarroponteAPI;
 
 public static class CarroponteInterface
 {
-    private static Plc _plc = new(CpuType.S71500, "192.168.2.111", 0, 0);
+    private static readonly Plc _plc = new(CpuType.S71500, "192.168.2.111", 0, 0);
 
-    private static CarroponteState _carroponteState = new();
+    private static readonly CarroponteState _carroponteState = new();
 
-    private static bool TryConnect()
+    public static bool TryConnect()
     {
+        return true;
+
+        if (_plc.IsConnected)
+        {
+            return true;
+        }
+
         try
         {
             _plc.Open();
 
-            if(!_plc.IsConnected)
+            if (!_plc.IsConnected)
             {
-                throw new Exception("Failed connection to plc");
+                throw new Exception("unable to connect");
             }
-            
+
             Console.WriteLine("connected");
             return true;
         }
-        catch(Exception e)
+        catch (Exception e)
         {
             Console.Error.WriteLine(e);
             return false;
         }
     }
-    
-    
+
+
     private static bool ReadStatus()
     {
+        if(!_plc.IsConnected)
+        {
+            return false;
+        }
+
         // read from plc
         try
         {
@@ -64,18 +76,22 @@ public static class CarroponteInterface
         }
 
         return true;
-        
+
     }
 
     public static CarroponteState GetStatus()
     {
+        TryConnect();
+
         ReadStatus();
 
         return _carroponteState;
-    } 
+    }
 
     public static void ToggleSale()
     {
+        TryConnect();
+
         _carroponteState.Sale = !_carroponteState.Sale;
 
         _plc.Write("DB1.DBX1.0", _carroponteState.Sale);
@@ -83,6 +99,8 @@ public static class CarroponteInterface
 
     public static void ToggleScende()
     {
+        TryConnect();
+
         _carroponteState.Scende = !_carroponteState.Scende;
 
         _plc.Write("DB1.DBX0.7", _carroponteState.Scende);
@@ -90,33 +108,45 @@ public static class CarroponteInterface
 
     public static void ToggleAvanti()
     {
+        TryConnect();
+
         _carroponteState.Avanti = !_carroponteState.Avanti;
+
+        _plc.Write("DB1.DBX0.3", _carroponteState.Avanti);
     }
 
     public static void ToggleIndietro()
     {
+        TryConnect();
+
         _carroponteState.Indietro = !_carroponteState.Indietro;
-        
-        
+
+        _plc.Write("DB1.DBX0.4", _carroponteState.Indietro);
     }
 
     public static void ToggleSinistra()
     {
+        TryConnect();
+
         _carroponteState.Sinistra = !_carroponteState.Sinistra;
-        
-        
+
+        _plc.Write("DB1.DBX0.6", _carroponteState.Avanti);
     }
 
     public static void ToggleDestra()
     {
+        TryConnect();
+
         _carroponteState.Destra = !_carroponteState.Destra;
 
-        
+        _plc.Write("DB1.DBX0.5", _carroponteState.Avanti);
     }
 
-
-    private static void Disconnect()
+    public static void Disconnect()
     {
-        _plc.Close();
+        if(_plc.IsConnected)
+        {
+            _plc.Close();
+        }
     }
 }

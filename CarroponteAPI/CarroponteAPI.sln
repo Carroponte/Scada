@@ -1,6 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarroponteAPI", "CarroponteAPI\CarroponteAPI.csproj", "{F74EADB7-827A-4ADA-A9DF-3FDC75BD1862}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarroponteAPI", "CarroponteAPI\CarroponteAPI.csproj", "{9B9497DD-F136-4338-B383-C7FABB1C1DBA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F74EADB7-827A-4ADA-A9DF-3FDC75BD1862}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F74EADB7-827A-4ADA-A9DF-3FDC75BD1862}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F74EADB7-827A-4ADA-A9DF-3FDC75BD1862}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F74EADB7-827A-4ADA-A9DF-3FDC75BD1862}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B9497DD-F136-4338-B383-C7FABB1C1DBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B9497DD-F136-4338-B383-C7FABB1C1DBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B9497DD-F136-4338-B383-C7FABB1C1DBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B9497DD-F136-4338-B383-C7FABB1C1DBA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A25E58A9-B636-40B2-A99B-D2A88A6AEC7D}
 	EndGlobalSection
 EndGlobal
