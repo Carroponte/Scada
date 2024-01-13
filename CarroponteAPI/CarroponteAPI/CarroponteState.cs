@@ -7,9 +7,8 @@ namespace CarroponteAPI;
 public sealed class CarroponteState
 {
     public bool Manuale { get; set; }
-    public bool Automatico { get; set; }
     public bool Emergenza { get; set; }
-
+    
     public bool Avanti { get; set; }
     public bool Indietro { get; set; }
     public bool Destra { get; set; }
@@ -32,7 +31,6 @@ public sealed class CarroponteState
     public bool Movimento { get; set; }
 
     public int Posizione { get; set; }
-    public int Destinazione { get; set; }
 
     public override string ToString() => JsonConvert.SerializeObject(this);
 }

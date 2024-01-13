@@ -22,22 +22,23 @@ app.MapGet("/status", () => {
     return new { data = status.ToString() };
 }).WithName("GetPlcStatus");
 
-app.MapPost("/sale", () => CarroponteInterface.ToggleSale())
+app.MapPost("/sale", CarroponteInterface.ToggleSale)
     .WithName("PostPlcSale");
 
-app.MapPost("/scende", () => CarroponteInterface.ToggleScende())
+app.MapPost("/scende", CarroponteInterface.ToggleScende)
     .WithName("PostPlcScende");
 
-app.MapPost("/avanti", () => CarroponteInterface.ToggleAvanti())
+app.MapPost("/avanti", CarroponteInterface.ToggleAvanti)
     .WithName("PostPlcAvanti");
 
-app.MapPost("/indietro", () => CarroponteInterface.ToggleIndietro())
+app.MapPost("/indietro", CarroponteInterface.ToggleIndietro)
     .WithName("PostPlcIndietro");
 
-app.MapPost("/destra", () => CarroponteInterface.ToggleDestra())
+app.MapPost("/destra", CarroponteInterface.ToggleDestra)
     .WithName("PostPlcDestra");
 
-app.MapPost("/sinistra", () => CarroponteInterface.ToggleSinistra())
+app.MapPost("/sinistra", CarroponteInterface.ToggleSinistra)
     .WithName("PostPlcSinistra");
+
 
 app.Run();

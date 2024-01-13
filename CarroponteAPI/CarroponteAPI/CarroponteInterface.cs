@@ -4,24 +4,22 @@ namespace CarroponteAPI;
 
 public static class CarroponteInterface
 {
-    private static readonly Plc _plc = new(CpuType.S71500, "192.168.2.111", 0, 0);
+    private static readonly Plc Plc = new(CpuType.S71500, "192.168.2.111", 0, 0);
 
-    private static readonly CarroponteState _carroponteState = new();
+    private static readonly CarroponteState CarroponteState = new();
 
-    public static bool TryConnect()
+    private static bool TryConnect()
     {
-        return true;
-
-        if (_plc.IsConnected)
+        if (Plc.IsConnected)
         {
             return true;
         }
 
         try
         {
-            _plc.Open();
+            Plc.Open();
 
-            if (!_plc.IsConnected)
+            if (!Plc.IsConnected)
             {
                 throw new Exception("unable to connect");
             }
@@ -39,7 +37,7 @@ public static class CarroponteInterface
 
     private static bool ReadStatus()
     {
-        if(!_plc.IsConnected)
+        if(!Plc.IsConnected)
         {
             return false;
         }
@@ -47,27 +45,25 @@ public static class CarroponteInterface
         // read from plc
         try
         {
-            _carroponteState.Manuale = Convert.ToBoolean(_plc.Read("DB1.DBX0.2"));
-            _carroponteState.Automatico = Convert.ToBoolean(_plc.Read("DB1.DBX1.2"));
-            _carroponteState.Emergenza = Convert.ToBoolean(_plc.Read("DB1.DBX0.1"));
+            CarroponteState.Manuale = Convert.ToBoolean(Plc.Read("DB1.DBX0.2"));
+            CarroponteState.Emergenza = Convert.ToBoolean(Plc.Read("DB1.DBX0.1"));
 
-            _carroponteState.Indietro = Convert.ToBoolean(_plc.Read("DB1.DBX0.4"));
-            _carroponteState.Avanti = Convert.ToBoolean(_plc.Read("DB1.DBX0.3"));
-            _carroponteState.Destra = Convert.ToBoolean(_plc.Read("DB1.DBX0.5"));
-            _carroponteState.Sinistra = Convert.ToBoolean(_plc.Read("DB1.DBX0.6"));
-            _carroponteState.Sale = Convert.ToBoolean(_plc.Read("DB1.DBX1.0"));
-            _carroponteState.Scende = Convert.ToBoolean(_plc.Read("DB1.DBX0.7"));
+            CarroponteState.Indietro = Convert.ToBoolean(Plc.Read("DB1.DBX0.4"));
+            CarroponteState.Avanti = Convert.ToBoolean(Plc.Read("DB1.DBX0.3"));
+            CarroponteState.Destra = Convert.ToBoolean(Plc.Read("DB1.DBX0.5"));
+            CarroponteState.Sinistra = Convert.ToBoolean(Plc.Read("DB1.DBX0.6"));
+            CarroponteState.Sale = Convert.ToBoolean(Plc.Read("DB1.DBX1.0"));
+            CarroponteState.Scende = Convert.ToBoolean(Plc.Read("DB1.DBX0.7"));
 
-            _carroponteState.FineCorsaX = Convert.ToBoolean(_plc.Read("DB2.DBX0.7"));
-            _carroponteState.InizioCorsaX = Convert.ToBoolean(_plc.Read("DB2.DBX1.1"));
-            _carroponteState.FineCorsaY = Convert.ToBoolean(_plc.Read("DB2.DBX1.0"));
-            _carroponteState.InizioCorsaY = Convert.ToBoolean(_plc.Read("DB2.DBX1.2"));
-            _carroponteState.MovimentoX = Convert.ToBoolean(_plc.Read("DB2.DBX1.3"));
-            _carroponteState.MovimentoY = Convert.ToBoolean(_plc.Read("DB2.DBX1.4"));
-            _carroponteState.Movimento = Convert.ToBoolean(_plc.Read("DB2.DBX1.5"));
+            CarroponteState.FineCorsaX = Convert.ToBoolean(Plc.Read("DB2.DBX0.7"));
+            CarroponteState.InizioCorsaX = Convert.ToBoolean(Plc.Read("DB2.DBX1.1"));
+            CarroponteState.FineCorsaY = Convert.ToBoolean(Plc.Read("DB2.DBX1.0"));
+            CarroponteState.InizioCorsaY = Convert.ToBoolean(Plc.Read("DB2.DBX1.2"));
+            CarroponteState.MovimentoX = Convert.ToBoolean(Plc.Read("DB2.DBX1.3"));
+            CarroponteState.MovimentoY = Convert.ToBoolean(Plc.Read("DB2.DBX1.4"));
+            CarroponteState.Movimento = Convert.ToBoolean(Plc.Read("DB2.DBX1.5"));
 
-            _carroponteState.Posizione = Convert.ToInt32(_plc.Read("DB3.DBX4.0"));
-            _carroponteState.Destinazione = Convert.ToInt32(_plc.Read("DB3.DBX2.0"));
+            CarroponteState.Posizione = Convert.ToInt32(Plc.Read("DB3.DBX4.0"));
         }
         catch (Exception e)
         {
@@ -85,68 +81,68 @@ public static class CarroponteInterface
 
         ReadStatus();
 
-        return _carroponteState;
+        return CarroponteState;
     }
 
     public static void ToggleSale()
     {
         TryConnect();
 
-        _carroponteState.Sale = !_carroponteState.Sale;
+        CarroponteState.Sale = !CarroponteState.Sale;
 
-        _plc.Write("DB1.DBX1.0", _carroponteState.Sale);
+        Plc.Write("DB1.DBX1.0", CarroponteState.Sale);
     }
 
     public static void ToggleScende()
     {
         TryConnect();
 
-        _carroponteState.Scende = !_carroponteState.Scende;
+        CarroponteState.Scende = !CarroponteState.Scende;
 
-        _plc.Write("DB1.DBX0.7", _carroponteState.Scende);
+        Plc.Write("DB1.DBX0.7", CarroponteState.Scende);
     }
 
     public static void ToggleAvanti()
     {
         TryConnect();
 
-        _carroponteState.Avanti = !_carroponteState.Avanti;
+        CarroponteState.Avanti = !CarroponteState.Avanti;
 
-        _plc.Write("DB1.DBX0.3", _carroponteState.Avanti);
+        Plc.Write("DB1.DBX0.3", CarroponteState.Avanti);
     }
 
     public static void ToggleIndietro()
     {
         TryConnect();
 
-        _carroponteState.Indietro = !_carroponteState.Indietro;
+        CarroponteState.Indietro = !CarroponteState.Indietro;
 
-        _plc.Write("DB1.DBX0.4", _carroponteState.Indietro);
+        Plc.Write("DB1.DBX0.4", CarroponteState.Indietro);
     }
 
     public static void ToggleSinistra()
     {
         TryConnect();
 
-        _carroponteState.Sinistra = !_carroponteState.Sinistra;
+        CarroponteState.Sinistra = !CarroponteState.Sinistra;
 
-        _plc.Write("DB1.DBX0.6", _carroponteState.Avanti);
+        Plc.Write("DB1.DBX0.6", CarroponteState.Avanti);
     }
 
     public static void ToggleDestra()
     {
         TryConnect();
 
-        _carroponteState.Destra = !_carroponteState.Destra;
+        CarroponteState.Destra = !CarroponteState.Destra;
 
-        _plc.Write("DB1.DBX0.5", _carroponteState.Avanti);
+        Plc.Write("DB1.DBX0.5", CarroponteState.Avanti);
     }
 
-    public static void Disconnect()
+    private static void Disconnect()
     {
-        if(_plc.IsConnected)
+        if(Plc.IsConnected)
         {
-            _plc.Close();
+            Plc.Close();
         }
     }
 }
