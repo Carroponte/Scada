@@ -1,30 +1,36 @@
 {
   "format": 1,
   "restore": {
-    "/Users/lorenzomarchisio/Desktop/Scada/CarroponteAPI/CarroponteAPI/CarroponteAPI.csproj": {}
+    "C:\\Users\\l.marchisio.2268\\Desktop\\Scada\\CarroponteAPI\\CarroponteAPI\\CarroponteAPI.csproj": {}
   },
   "projects": {
-    "/Users/lorenzomarchisio/Desktop/Scada/CarroponteAPI/CarroponteAPI/CarroponteAPI.csproj": {
+    "C:\\Users\\l.marchisio.2268\\Desktop\\Scada\\CarroponteAPI\\CarroponteAPI\\CarroponteAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/lorenzomarchisio/Desktop/Scada/CarroponteAPI/CarroponteAPI/CarroponteAPI.csproj",
+        "projectUniqueName": "C:\\Users\\l.marchisio.2268\\Desktop\\Scada\\CarroponteAPI\\CarroponteAPI\\CarroponteAPI.csproj",
         "projectName": "CarroponteAPI",
-        "projectPath": "/Users/lorenzomarchisio/Desktop/Scada/CarroponteAPI/CarroponteAPI/CarroponteAPI.csproj",
-        "packagesPath": "/Users/lorenzomarchisio/.nuget/packages/",
-        "outputPath": "/Users/lorenzomarchisio/Desktop/Scada/CarroponteAPI/CarroponteAPI/obj/",
+        "projectPath": "C:\\Users\\l.marchisio.2268\\Desktop\\Scada\\CarroponteAPI\\CarroponteAPI\\CarroponteAPI.csproj",
+        "packagesPath": "C:\\Users\\l.marchisio.2268\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\l.marchisio.2268\\Desktop\\Scada\\CarroponteAPI\\CarroponteAPI\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "/Users/lorenzomarchisio/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\l.marchisio.2268\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net60"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net60": {
             "projectReferences": {}
           }
         },
@@ -35,8 +41,7 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net60": {
           "dependencies": {
             "Newtonsoft.Json": {
               "target": "Package",
@@ -51,26 +56,12 @@
               "version": "[6.2.3, )"
             }
           },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win7-x86": {
+          "#import": []
         }
       }
     }

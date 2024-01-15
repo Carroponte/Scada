@@ -91,6 +91,22 @@ public static class CarroponteInterface
         CarroponteState.Sale = !CarroponteState.Sale;
 
         Plc.Write("DB1.DBX1.0", CarroponteState.Sale);
+
+        // reset other movement
+        CarroponteState.Indietro = false;
+        Plc.Write("DB1.DBX0.4", false);
+
+        CarroponteState.Avanti = false;
+        Plc.Write("DB1.DBX0.3", false);
+
+        CarroponteState.Destra = false;
+        Plc.Write("DB1.DBX0.5", false);
+
+        CarroponteState.Sinistra = false; 
+        Plc.Write("DB1.DBX0.6", false);
+
+        CarroponteState.Scende = false;
+        Plc.Write("DB1.DBX0.7", false);
     }
 
     public static void ToggleScende()
@@ -100,6 +116,22 @@ public static class CarroponteInterface
         CarroponteState.Scende = !CarroponteState.Scende;
 
         Plc.Write("DB1.DBX0.7", CarroponteState.Scende);
+
+        // reset other movement
+        CarroponteState.Indietro = false;
+        Plc.Write("DB1.DBX0.4", false);
+
+        CarroponteState.Avanti = false;
+        Plc.Write("DB1.DBX0.3", false);
+
+        CarroponteState.Destra = false;
+        Plc.Write("DB1.DBX0.5", false);
+
+        CarroponteState.Sinistra = false;
+        Plc.Write("DB1.DBX0.6", false);
+
+        CarroponteState.Sale = false;
+        Plc.Write("DB1.DBX1.0", false);
     }
 
     public static void ToggleAvanti()
@@ -109,6 +141,22 @@ public static class CarroponteInterface
         CarroponteState.Avanti = !CarroponteState.Avanti;
 
         Plc.Write("DB1.DBX0.3", CarroponteState.Avanti);
+
+        // reset other movement
+        CarroponteState.Indietro = false;
+        Plc.Write("DB1.DBX0.4", false);
+
+        CarroponteState.Destra = false;
+        Plc.Write("DB1.DBX0.5", false);
+
+        CarroponteState.Sinistra = false;
+        Plc.Write("DB1.DBX0.6", false);
+
+        CarroponteState.Sale = false;
+        Plc.Write("DB1.DBX1.0", false);
+
+        CarroponteState.Scende = false;
+        Plc.Write("DB1.DBX0.7", false);
     }
 
     public static void ToggleIndietro()
@@ -118,6 +166,22 @@ public static class CarroponteInterface
         CarroponteState.Indietro = !CarroponteState.Indietro;
 
         Plc.Write("DB1.DBX0.4", CarroponteState.Indietro);
+
+        // reset other movement
+        CarroponteState.Avanti = false;
+        Plc.Write("DB1.DBX0.3", false);
+
+        CarroponteState.Destra = false;
+        Plc.Write("DB1.DBX0.5", false);
+
+        CarroponteState.Sinistra = false;
+        Plc.Write("DB1.DBX0.6", false);
+
+        CarroponteState.Sale = false;
+        Plc.Write("DB1.DBX1.0", false);
+
+        CarroponteState.Scende = false;
+        Plc.Write("DB1.DBX0.7", false);
     }
 
     public static void ToggleSinistra()
@@ -127,6 +191,22 @@ public static class CarroponteInterface
         CarroponteState.Sinistra = !CarroponteState.Sinistra;
 
         Plc.Write("DB1.DBX0.6", CarroponteState.Avanti);
+
+        // reset other movement
+        CarroponteState.Indietro = false;
+        Plc.Write("DB1.DBX0.4", false);
+
+        CarroponteState.Avanti = false;
+        Plc.Write("DB1.DBX0.3", false);
+
+        CarroponteState.Destra = false;
+        Plc.Write("DB1.DBX0.5", false);
+
+        CarroponteState.Sale = false;
+        Plc.Write("DB1.DBX1.0", false);
+
+        CarroponteState.Scende = false;
+        Plc.Write("DB1.DBX0.7", false);
     }
 
     public static void ToggleDestra()
@@ -136,6 +216,22 @@ public static class CarroponteInterface
         CarroponteState.Destra = !CarroponteState.Destra;
 
         Plc.Write("DB1.DBX0.5", CarroponteState.Avanti);
+
+        // reset other movement
+        CarroponteState.Indietro = false;
+        Plc.Write("DB1.DBX0.4", false);
+
+        CarroponteState.Avanti = false;
+        Plc.Write("DB1.DBX0.3", false);
+
+        CarroponteState.Sinistra = false;
+        Plc.Write("DB1.DBX0.6", false);
+
+        CarroponteState.Sale = false;
+        Plc.Write("DB1.DBX1.0", false);
+
+        CarroponteState.Scende = false;
+        Plc.Write("DB1.DBX0.7", false);
     }
 
     private static void Disconnect()
